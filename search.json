@@ -11,6 +11,27 @@
     "href": "index.html",
     "title": "SportsDataBlog",
     "section": "",
-    "text": "The Running Game Isn’t Dying; It’s Evolving\n\n\n\n\n\n\nFootball\n\n\nNFL\n\n\nOffensive Statistics\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nJoel Hammond\n\n\n\n\n\n\nNo matching items"
+    "text": "hi\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Running Game Isn’t Dying; It’s Evolving\n\n\n\n\n\n\nFootball\n\n\nNFL\n\n\nOffensive Statistics\n\n\n\n\n\n\n\n\n\nMay 11, 2026\n\n\nJoel Hammond\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/index.qmd/index.html",
+    "href": "posts/index.qmd/index.html",
+    "title": "The Running Game Isn’t Dying; It’s Evolving",
+    "section": "",
+    "text": "hi"
+  },
+  {
+    "objectID": "posts/index.qmd/index.html#introduction",
+    "href": "posts/index.qmd/index.html#introduction",
+    "title": "The Running Game Isn’t Dying; It’s Evolving",
+    "section": "",
+    "text": "This is my analysis of NFL rushing trends.\n\n\nCode\nlibrary(tidyverse)\nlibrary(nflverse)"
+  },
+  {
+    "objectID": "posts/index.qmd/index.html#the-data",
+    "href": "posts/index.qmd/index.html#the-data",
+    "title": "The Running Game Isn’t Dying; It’s Evolving",
+    "section": "The Data",
+    "text": "The Data\n\n\nCode\nrushing_data &lt;- load_player_stats(seasons = 2024)\n\n\nText explaining what you found…"
   }
 ]
