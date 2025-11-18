@@ -33,5 +33,40 @@
     "title": "The Running Game Isn’t Dying; It’s Evolving",
     "section": "The Data",
     "text": "The Data\n\n\nCode\nrushing_data &lt;- load_player_stats(seasons = 2024)\n\n\nText explaining what you found…"
+  },
+  {
+    "objectID": "posts/FootBallRushing/index.html",
+    "href": "posts/FootBallRushing/index.html",
+    "title": "The Running Game Isn’t Dying; It’s Evolving",
+    "section": "",
+    "text": "Over the past 20 to 30 years, the NFL has changed from run first play calling to pass first; at least that’s the general consensus. Many believe the running game has declined consistently, but others believe that the running game is evolving.\nSo which is it? I analyzed 20 years of NFL data (2004-2024) to find out if rushing is truly dying, or if it’s just evolving into something different."
+  },
+  {
+    "objectID": "posts/FootBallRushing/index.html#the-data",
+    "href": "posts/FootBallRushing/index.html#the-data",
+    "title": "The Running Game Isn’t Dying; It’s Evolving",
+    "section": "The Data",
+    "text": "The Data\n\n\nCode\nlibrary(tidyverse)\nlibrary(nflverse)\n\n# Load data for both time periods\npbp_early &lt;- load_pbp(2004:2014)\npbp_recent &lt;- load_pbp(2015:2024)"
+  },
+  {
+    "objectID": "posts/FootBallRushing/index.html#the-first-decade-2004-2014",
+    "href": "posts/FootBallRushing/index.html#the-first-decade-2004-2014",
+    "title": "The Running Game Isn’t Dying; It’s Evolving",
+    "section": "The First Decade: 2004-2014",
+    "text": "The First Decade: 2004-2014\nLet’s start by looking at how NFL teams called plays during the 2004-2014 era.\n\n\nCode\n# Calculate run vs pass percentages for 2004-2014\nplay_trends_early &lt;- pbp_early |&gt;\n  filter(!is.na(play_type), play_type %in% c(\"run\", \"pass\")) |&gt;\n  group_by(season, play_type) |&gt;\n  summarise(plays = n(), .groups = \"drop\") |&gt;\n  group_by(season) |&gt;\n  mutate(pct = plays / sum(plays) * 100) |&gt;\n  ungroup()\n\n# Create chart\nggplot(play_trends_early, aes(x = season, y = pct, color = play_type)) +\n  geom_line(linewidth = 1.5) +\n  geom_point(size = 3) +\n  scale_color_manual(\n    values = c(\"run\" = \"#d00000\", \"pass\" = \"#0066cc\"),\n    labels = c(\"Rushing\", \"Passing\")\n  ) +\n  scale_y_continuous(limits = c(35, 65)) +\n  scale_x_continuous(breaks = seq(2004, 2014, 2)) +\n  labs(\n    title = \"NFL play calling: 2004-2014\",\n    subtitle = \"Percentage of offensive plays by type\",\n    x = \"\",\n    y = \"Percentage of plays\",\n    color = \"Play Type\",\n    caption = \"Source: nflverse | By Joel Hammond\"\n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(size = 16, face = \"bold\"),\n    plot.subtitle = element_text(size = 12),\n    legend.position = \"bottom\",\n    panel.grid.minor = element_blank()\n  )\n\n\n\n\n\n\n\n\n\nDuring this decade, we can see that running plays made up roughly 43-45% of all offensive plays, while passing plays accounted for 55-57%. The balance stayed relatively stable across this period."
+  },
+  {
+    "objectID": "posts/FootBallRushing/index.html#the-recent-decade-2015-2024",
+    "href": "posts/FootBallRushing/index.html#the-recent-decade-2015-2024",
+    "title": "The Running Game Isn’t Dying; It’s Evolving",
+    "section": "The Recent Decade: 2015-2024",
+    "text": "The Recent Decade: 2015-2024\nNow let’s see if that balance has shifted in the more recent era.\n\n\nCode\n# Calculate run vs pass percentages for 2015-2024\nplay_trends_recent &lt;- pbp_recent |&gt;\n  filter(!is.na(play_type), play_type %in% c(\"run\", \"pass\")) |&gt;\n  group_by(season, play_type) |&gt;\n  summarise(plays = n(), .groups = \"drop\") |&gt;\n  group_by(season) |&gt;\n  mutate(pct = plays / sum(plays) * 100) |&gt;\n  ungroup()\n\n# Create chart\nggplot(play_trends_recent, aes(x = season, y = pct, color = play_type)) +\n  geom_line(linewidth = 1.5) +\n  geom_point(size = 3) +\n  scale_color_manual(\n    values = c(\"run\" = \"#d00000\", \"pass\" = \"#0066cc\"),\n    labels = c(\"Rushing\", \"Passing\")\n  ) +\n  scale_y_continuous(limits = c(35, 65)) +\n  scale_x_continuous(breaks = seq(2015, 2024, 2)) +\n  labs(\n    title = \"NFL play calling: 2015-2024\",\n    subtitle = \"Percentage of offensive plays by type\",\n    x = \"\",\n    y = \"Percentage of plays\",\n    color = \"Play Type\",\n    caption = \"Source: nflverse | By Joel Hammond\"\n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(size = 16, face = \"bold\"),\n    plot.subtitle = element_text(size = 12),\n    legend.position = \"bottom\",\n    panel.grid.minor = element_blank()\n  )\n\n\n\n\n\n\n\n\n\nThe shift becomes clear when comparing the two decades. In recent years, rushing plays have declined to around 40-42% of offensive plays, with passing increasing to 58-60%. That may seem like a small change, but across thousands of plays per season, it represents a significant strategic shift."
+  },
+  {
+    "objectID": "posts/FootBallRushing/index.html#what-changed",
+    "href": "posts/FootBallRushing/index.html#what-changed",
+    "title": "The Running Game Isn’t Dying; It’s Evolving",
+    "section": "What Changed?",
+    "text": "What Changed?\n\n\nCode\n# Compare the averages\nsummary_early &lt;- play_trends_early |&gt;\n  group_by(play_type) |&gt;\n  summarise(\n    avg_pct = mean(pct)\n  )\n\nsummary_recent &lt;- play_trends_recent |&gt;\n  group_by(play_type) |&gt;\n  summarise(\n    avg_pct = mean(pct)\n  )\n\ncomparison &lt;- summary_early |&gt;\n  rename(early_avg = avg_pct) |&gt;\n  left_join(\n    summary_recent |&gt; rename(recent_avg = avg_pct),\n    by = \"play_type\"\n  ) |&gt;\n  mutate(\n    change = recent_avg - early_avg\n  )\n\nprint(comparison)\n\n\n# A tibble: 2 × 4\n  play_type early_avg recent_avg change\n  &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;\n1 pass           57.1       58.8   1.71\n2 run            42.9       41.2  -1.71"
   }
 ]
