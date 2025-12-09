@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Joel Hammond">
 
-<title>SportsDataBlog – Hammond Sports</title>
+<title>The Dan Campbell Effect – Hammond Sports</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +24,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,77 +70,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Hammond Sports</span>
     </a>
   </div>
@@ -152,7 +93,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -174,130 +115,74 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">SportsDataBlog</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="All">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Coaching">Coaching <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Football">Football <span class="quarto-category-count">(2)</span></div><div class="category" data-category="NFL">NFL <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Offensive Statistics">Offensive Statistics <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The Dan Campbell Effect</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">All</div>
+    <div class="quarto-category">Football</div>
+    <div class="quarto-category">NFL</div>
+    <div class="quarto-category">Coaching</div>
+  </div>
+  </div>
 
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Joel Hammond </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In 2008, the Detroit Lions ended their season with an 0-16 record, making them the first team in NFL history to finish a season with no wins. This sounds bad, and it is, but Detroit fans were all but used to it. The Lions organization originated in 1930 and were a decently successful team up until the super bowl era in 1966. During the super bowl era, up until 2020, the Lions had won 332 times compared to their 439 losses, while only winning one playoff game. Due to this, they were known as one of the worst franchises in all of sports.</p>
+<p>But something changed in 2021 when the Lions hired Dan Campbell at Head Coach. Coach Campbell instantly drew attention from the media as in his opening press conference he famously said “We’re gonna kick you in the teeth, all right? And when you punch us back, we’re gonna smile at you, and when you knock us down, we’re going to get up. And on the way up, we’re going to bite a kneecap off.” This gave Lions fans a spark and a new confidence had grown in Detroit.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>These graphs show the Lions offensive and defensive efficiency pre and post Dan Campbell. The difference is obvious and truly astounding. Before Campbell, the Lions were consistently one of the worst teams on offense and defense. After, it changed for the better. Every season under Campbell, the Lions improved on both sides of the ball, which ultimately led to more wins.</p>
+<p>How exactly did this happen though. How was Campbell able to turn around a franchise that had only won one playoff game in 54 years. Diving deeper into how he was able to do this. The first thing to look at was the rushing attack, as Campbell wanted to begin his rebuild in the trenches.</p>
 
 
 
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="All,Football,NFL,Coaching" data-listing-date-sort="NaN" data-listing-file-modified-sort="1764951782579" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1149">
-<div class="thumbnail">
-<p><a href="./posts/dan-campbell-effect/index.html" class="no-external"></a></p><a href="./posts/dan-campbell-effect/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/dan-campbell-effect/DanCampbellBlog.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/dan-campbell-effect/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/dan-campbell-effect/index.html" class="no-external">The Dan Campbell Effect</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/dan-campbell-effect/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('All'); return false;">
-All
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Football'); return false;">
-Football
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('NFL'); return false;">
-NFL
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Coaching'); return false;">
-Coaching
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/dan-campbell-effect/index.html" class="no-external">In 2008, the Detroit Lions ended their season with an 0-16 record, making them the first team in NFL history to finish a season with no wins. This sounds bad, and it is, but…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/dan-campbell-effect/index.html" class="no-external">
-<div class="listing-date">
-Invalid Date
-</div>
-<div class="listing-author">
-Joel Hammond
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="All,Football,NFL,Offensive Statistics" data-listing-date-sort="1763359200000" data-listing-file-modified-sort="1763577072582" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1790">
-<div class="thumbnail">
-<p><a href="./posts/running-game-isn't-dying/index.html" class="no-external"></a></p><a href="./posts/running-game-isn't-dying/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/running-game-isn't-dying/000012.png?fixed_size=1" class="thumbnail-image"></p>
-</a><p><a href="./posts/running-game-isn't-dying/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/running-game-isn't-dying/index.html" class="no-external">The Running Game Isn’t Dying; It’s Evolving</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/running-game-isn't-dying/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('All'); return false;">
-All
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Football'); return false;">
-Football
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('NFL'); return false;">
-NFL
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Offensive Statistics'); return false;">
-Offensive Statistics
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/running-game-isn't-dying/index.html" class="no-external">Everyone says the NFL run game is dying. Analysts claim teams are passing more than ever. But what does the data actually show? I analyzed 20 years of NFL play-by-play data…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/running-game-isn't-dying/index.html" class="no-external">
-<div class="listing-date">
-Nov 17, 2025
-</div>
-<div class="listing-author">
-Joel Hammond
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
